@@ -1,0 +1,185 @@
+:root {
+	--submit-color: #800080;
+	--submit-hover-color:#4B0082;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="text"],input[type="date"],input[type="tel"],input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #111;
+  border-radius: 30px;
+  margin: 1rem 1rem 1rem 0; 
+  resize: vertical;
+}
+
+select {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #111;
+  border-radius: 30px;
+}
+
+input[type="text"]:hover,input[type="date"]:hover,input[type="tel"]:hover,input[type="email"]:hover, select:hover{
+  border: 3px solid #111;
+}
+
+input[type="text"]:focus,input[type="date"]:focus,input[type="tel"]:focus,input[type="email"]:focus, select:focus{
+  border: 3px solid #111;
+  outline: none;
+}
+
+input[type=submit] {
+  background-color: var(--submit-color);
+  color: white;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: var(--submit-hover-color);
+}
+
+table, th, td {
+  padding:10px;
+  border: 1px solid black; 
+  border-collapse: collapse;
+  cursor: none;
+}
+
+table:hover , td:hover {
+  border: 5px solid purple;
+}
+
+th:hover{
+  border: 5px solid blue; 
+}
+
+.highlightedCell {
+background-color: yellow;
+}
+
+/* Popup container */
+.popup {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    background-color: #4b0082;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px 16px;
+    position: absolute;
+    z-index: 1;
+}
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.container {
+  margin-top: 1rem;
+  border-radius: 40px;
+  border: 5px solid var(--submit-hover-color);
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-width: 300px;
+  width: 35%;
+  float: left;
+}
+
+.calendar {
+  margin-right: 1rem;
+  border-radius: 40px;
+  border: 5px solid var(--submit-hover-color);
+  background-color: #f2f2f2;
+  padding: 20px;
+  min-width: 400px;
+  width: 60%;
+  float: right;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-around;
+  border: 1px black solid;
+  padding: 20px;
+}
+
+#month , #year {
+	width: 7rem;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #b19cd9;
+  cursor: pointer;
+  color: black;
+}
+
+.next {
+  background-color: #b19cd9;
+  cursor: pointer;
+  color: black;
+}
+
+.round {
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Registration</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <h1 style="text-align: center;color: purple;">Ameer's Calendar</h1>
+</head>
+<body onload='main()'>
+
+  <div class="popup">
+  <div class="popuptext" id="myPopup"></div>
+  </div>
+
+  <div class="container">
+  <form action="">
+
+    Name:
+    <input type="text" id="name" name="name" pattern="^[a-zA-Z ]*$" placeholder="Enter Full Name" required>
+
+    Phone:
+    <input type="tel" id="phone" name="phone" placeholder="Enter Phone No." pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" required>
+
+    Email:
+    <input type="email" id="email" href="mailto:someone@example.com?" name="email" placeholder="Enter Email" required>
+
+    <div id="emailrow">
+    <a href="mailto:someone@example.com?">Send Mail</a>
+    </div><br>
+
+    Destination:
+    <input type="text" id="destination" name="destid" placeholder="Enter Place" pattern="^[a-zA-Z ]*$" required>
+
+    <br><br>
+    Gender:<br>
+    <input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other
+
+    <br><br>Preferred Mode of Transport:<br>
+    <input type="checkbox" name="flight" value="Flight">Flight
+    <input type="checkbox" name="train" value="Train">Train
+    <input type="checkbox" name="bus" value="Bus" checked>Bus
+
+    <br><br>Start Date:
+    <input type="date" id="StartDate" name="startdate" placeholder="mm-dd-yyyy" required>
+
+    End Date:
+    <input type="date" id="EndDate" name="enddate" placeholder="mm-dd-yyyy" required>
+
+    <div id="row">
+    <input type="submit" value="Submit" ></input>
+    </div>
+  </form> 
+  </div>
+
+  <!-- Calendar -->
+  <br>
+  <div class="calendar">
+    <div class="top-row">
+      <a onclick="previous()" class="previous round">&#8249;</a>
+      <form class="form-control">
+        <select class="form-control" name="month" id="month" onchange="jump()">
+          <option value=0>Jan</option>
+          <option value=1>Feb</option>
+          <option value=2>Mar</option>
+          <option value=3>Apr</option>
+          <option value=4>May</option>
+          <option value=5>Jun</option>
+          <option value=6>Jul</option>
+          <option value=7>Aug</option>
+          <option value=8>Sep</option>
+          <option value=9>Oct</option>
+          <option value=10>Nov</option>
+          <option value=11>Dec</option>
+        </select>
+
+
+        <select class="form-control" name="year" id="year" onchange="jump()">
+          <option value=2020>2020</option>
+          <option value=2021>2021</option>
+          <option value=2022>2022</option>
+          <option value=2023>2023</option>
+          <option value=2024>2024</option>
+          <option value=2025>2025</option>
+          <option value=2026>2026</option>
+          <option value=2027>2027</option>
+          <option value=2028>2028</option>
+          <option value=2029>2029</option>
+          <option value=2030>2030</option>
+        </select>
+      </form>
+      <a onclick="next()" class="next round">&#8250;</a>
+    </div>
+
+    <div class="calendar-card">
+        <h3 class="card-header top-row" id="monthAndYear"></h3>
+        <table id="calendar-table" width="100%">
+            <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            </thead>
+
+            <tbody id="calendar-body">
+            </tbody>
+
+        </table>
+    </div>
+  </div>
+<!--<button name="jump" onclick="jump()">Go</button>-->
+
+
+
+    <script type="text/javascript" src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script> 
+
+  </body>
+</html>
+
